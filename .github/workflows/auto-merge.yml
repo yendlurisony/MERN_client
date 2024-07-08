@@ -1,4 +1,4 @@
-name: Auto Merge Main to Testing in client
+name: Auto Merge Main to Test in client
 
 on:
   push:
@@ -23,8 +23,8 @@ jobs:
       - name: Fetch all branches
         run: git fetch --all
 
-      - name: Merge main into testing
+      - name: Merge main into test
         run: |
-          git checkout testing
+          git checkout test
           git merge -X theirs main --allow-unrelated-histories
-          git push origin testing
+          git push origin test
